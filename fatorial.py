@@ -1,15 +1,26 @@
-n = int(input("Digite o valor de n:"))
-
-if n == 0 or n == 1:
-    print(1)
-else:
-    fat = 0
+def fatorial(n):
+    if n < 0:
+        return 0
+    fat = 1
     while n > 1:
-        if fat > 0:
-            fat = fat * (n-1)
-        else:
-            fat = fat + n * (n-1)
+        fat = fat * n
         n = n-1
+    return fat
 
-    print(fat)
+# n = int(input("Digite o valor de n:"))
+# print(fatorial(n))
 
+def test_fatorial0():
+    assert fatorial(0) == 1
+
+def test_fatorial1():
+    assert fatorial(1) == 1
+
+def test_fatorial_negativo():
+    assert fatorial(-10) == 0
+
+def test_fatorial4():
+    assert fatorial(4) == 24
+
+def test_fatorial5():
+    assert fatorial(5) == 120
