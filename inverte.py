@@ -7,4 +7,5 @@ while x > 0:
     x = valor
 
 
-print(sorted(lista, reverse=True))
+for i in reversed(lista):
+    print(i)
